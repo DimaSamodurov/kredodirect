@@ -1,4 +1,4 @@
-tmp/capybara*
+tmp/*
 
 ## Environment normalisation:
 /.bundle
