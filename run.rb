@@ -1,17 +1,30 @@
 require 'bundler'
 Bundler.require(:default)
+Dotenv.load
 $LOAD_PATH.unshift('lib', '.')
 
-require 'firefox_config'
 require 'kredodirect/extractor'
+require 'firefox_config'
 
-Capybara.configure do |config|
-  config.app_host       = 'https://www.kredodirect.com.ua'
-  config.run_server     = false
-  config.save_and_open_page_path = File.join(__dir__, 'tmp')
-  config.default_driver = :firefox
+opts = Slop.parse do |o|
+  o.bool '--test', '-t', 'Test mode'
 end
 
-extractor = Kredodirect::Extractor.new
+if opts[:test]
+  puts Rainbow('Running in test mode.').blue
+  url = 'file://' + File.join(__dir__, 'test/test.html')
+else
+  url = 'https://kredodirect.com.ua/'
+end
+
+extractor = Kredodirect::Extractor.new(
+  url: url,
+  downloads_folder: File.join(__dir__, 'tmp/downloads'))
+
 extractor.run
 
+if extractor.file
+  puts Rainbow("Success. Downloaded file: #{extractor.file}").green
+else
+  puts Rainbow('Error. No file has been downloaded.').red
+end
