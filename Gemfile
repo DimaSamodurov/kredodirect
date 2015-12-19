@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'capybara'
-gem 'capybara-webkit'
-gem 'launchy'
 gem 'selenium-webdriver'
-gem 'pry'
+gem 'dotenv'
+
+group :development, :test do
+  gem 'launchy'
+  gem 'pry'
+end
