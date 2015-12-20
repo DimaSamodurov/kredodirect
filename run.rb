@@ -4,7 +4,6 @@ Dotenv.load
 $LOAD_PATH.unshift('lib', '.')
 
 require 'kredodirect/extractor'
-require 'config/firefox_config'
 
 opts = Slop.parse do |o|
   o.bool '--test', '-t', 'Test mode'
