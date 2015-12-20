@@ -32,5 +32,12 @@ The output .xls file will be saved to the tmp/downloads folder.
 
     ruby run.rb --test
 or 
+    
     ruby run.rb -t
+    
+## Test
+
+To run tests 
+
+    ruby spec/extractor_test.rb
     

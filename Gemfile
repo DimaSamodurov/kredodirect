@@ -16,4 +16,6 @@ group :development, :test do
   gem 'launchy'
   # To debug
   gem 'pry', github: 'pry/pry'
+  gem 'minitest'
+  gem 'minitest-reporters'
 end
