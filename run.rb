@@ -25,6 +25,8 @@ extractor.run
 
 if extractor.file
   puts Rainbow("Success. Downloaded file: #{extractor.file}").green
+  exit 0
 else
   puts Rainbow('Error. No file has been downloaded.').red
+  exit 1
 end
