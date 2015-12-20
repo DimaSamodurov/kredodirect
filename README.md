@@ -56,8 +56,16 @@ No internet connection is required to run tests.
 We do not use VCR, instead we use the mock page 'test/test.html' 
 which contains links and controls of real pages. 
  
-To run tests enter:
+To run all tests:
  
-    ruby spec/extractor_test.rb 
+    rake 
+ 
+Or run inidividual file:
+ 
+    ruby spec/account_history_extractor_spec.rb 
     
-We use Minitest, thus `ruby` instead of `rspec`.
+Notice `ruby` instead of `rspec` as we use Minitest.
+
+## License
+
+[MIT](LICENSE)

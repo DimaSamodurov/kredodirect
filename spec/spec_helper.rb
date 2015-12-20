@@ -6,5 +6,5 @@ $LOAD_PATH.unshift(File.join(__dir__, '../lib'),
 require 'minitest/autorun'
 require 'minitest/spec'
 require "minitest/reporters"
-Minitest::Reporters.use!
+Minitest::Reporters.use!(Minitest::Reporters::SpecReporter.new)
 require 'kredodirect/account_history_extractor'
