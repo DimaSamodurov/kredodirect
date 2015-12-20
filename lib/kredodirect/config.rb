@@ -1,3 +1,4 @@
+require 'selenium-webdriver'
 module Kredodirect
   module Config
 
@@ -5,7 +6,7 @@ module Kredodirect
 
     def configure_firefox(downloads_folder)
       Capybara.register_driver :firefox_kredodirect do |app|
-        profile = Selenium::WebDriver::Firefox::Profile.new
+        profile = ::Selenium::WebDriver::Firefox::Profile.new
 
         # Enable Webdriver extension which might be disable in firefox (case of Mac).
         profile['xpinstall.signatures.required'] = false

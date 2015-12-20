@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+# Require dependencies
+$LOAD_PATH.unshift(File.expand_path("../lib", __dir__))
+
+# Require kredodirect library
+require "kredodirect"
+
+# Load environment variables
+require 'dotenv'
+Dotenv.load
+
+Kredodirect::Application.new.run

@@ -1,6 +1,5 @@
 require 'capybara/dsl'
 require 'tmpdir'
-require 'kredodirect/config'
 module Kredodirect
   # Retrieves account history xls file from kredodirect.com.ua
   class AccountHistoryExtractor

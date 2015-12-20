@@ -1,15 +1,16 @@
-GIT
-  remote: git://github.com/pry/pry.git
-  revision: f929b1f5f1f37c8e1884f379f6c688679b8a957e
+PATH
+  remote: .
   specs:
-    pry (0.10.1)
-      coderay (~> 1.1.0)
-      method_source (~> 0.8.1)
+    kredodirect (0.0.1)
+      capybara (~> 2.1)
+      dotenv (~> 2.0)
+      rainbow (~> 2.0)
+      selenium-webdriver (~> 2.0)
+      slop (~> 4.2)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.4.0)
     ansi (1.5.0)
     builder (3.2.2)
     capybara (2.5.0)
@@ -21,10 +22,8 @@ GEM
     childprocess (0.5.8)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.0)
-    dotenv (2.0.1)
+    dotenv (2.0.2)
     ffi (1.9.10)
-    launchy (2.4.3)
-      addressable (~> 2.3)
     method_source (0.8.2)
     mime-types (3.0)
       mime-types-data (~> 3.2015)
@@ -39,17 +38,26 @@ GEM
     multi_json (1.11.2)
     nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
+    pry (0.8.3)
+      coderay (>= 0.9.7)
+      method_source (>= 0.4.0)
+      ruby_parser (>= 2.0.5)
+      slop (>= 1.5.3)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
     rainbow (2.0.0)
+    rake (10.4.2)
     ruby-progressbar (1.7.5)
+    ruby_parser (3.7.2)
+      sexp_processor (~> 4.1)
     rubyzip (1.1.7)
-    selenium-webdriver (2.47.1)
+    selenium-webdriver (2.48.1)
       childprocess (~> 0.5)
       multi_json (~> 1.0)
       rubyzip (~> 1.0)
       websocket (~> 1.0)
+    sexp_processor (4.6.0)
     slop (4.2.1)
     websocket (1.2.2)
     xpath (2.0.0)
@@ -59,15 +67,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capybara
-  dotenv
-  launchy
-  minitest
-  minitest-reporters
-  pry!
-  rainbow
-  selenium-webdriver
-  slop (~> 4.2)
+  bundler (~> 1.10)
+  kredodirect!
+  minitest (~> 5.8)
+  minitest-reporters (~> 1.1)
+  pry
+  rake (~> 10.0)
 
 BUNDLED WITH
    1.10.6

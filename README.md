@@ -18,26 +18,26 @@ Capybara and selenium webdriver are used to download .xls reports.
 
 
 ### Run from command line
-
-    ruby run.rb
-
+    
+    bin/kredodirect
 
 Program exits with the success (0) flag in case file has been downloaded.
 Otherwise it exits with the error flag (1).
 Success or failure will be also reported to the console with red or green message.
-The output .xls file will be saved to the tmp/downloads folder.
+
+The output .xls files will be saved to the tmp/downloads folder by default.
 
 
 ### Run in test mode (no connection to real site)
 
-    ruby run.rb --test
+    bin/kredodirect --test
 or 
     
-    ruby run.rb -t
+    bin/kredodirect -t
     
 ## Use within your application
     
-    require 'kredodirect/extractor'
+    require 'kredodirect'
     
     extractor = Kredodirect::AccountHistoryExtractor.new
     
