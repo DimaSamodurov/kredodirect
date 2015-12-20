@@ -3,7 +3,7 @@ Bundler.require(:default)
 Dotenv.load
 $LOAD_PATH.unshift('lib', '.')
 
-require 'kredodirect/extractor'
+require 'kredodirect/account_history_extractor'
 
 opts = Slop.parse do |o|
   o.bool '--test', '-t', 'Test mode'
@@ -16,13 +16,13 @@ else
   url = 'https://kredodirect.com.ua/'
 end
 
-extractor = Kredodirect::Extractor.new(
+extractor = Kredodirect::AccountHistoryExtractor.new(
   url: url,
   downloads_folder: File.join(__dir__, 'tmp/downloads'))
 
 extractor.run
 
-if extractor.file
+if extractor.success?
   puts Rainbow("Success. Downloaded file: #{extractor.file}").green
   exit 0
 else

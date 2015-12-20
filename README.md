@@ -1,4 +1,4 @@
-# Retrieves accounting data from kredodirect.com.ua
+# Retrieves account history data from kredodirect.com.ua
 
 Capybara and selenium webdriver are used to download .xls reports.
 
@@ -35,9 +35,29 @@ or
     
     ruby run.rb -t
     
-## Test
-
-To run tests 
-
-    ruby spec/extractor_test.rb
+## Use within your application
     
+    require 'kredodirect/extractor'
+    
+    extractor = Kredodirect::AccountHistoryExtractor.new
+    
+    extractor.run
+    
+    if extractor.success?
+      # Do anything you want with the file:
+      # copy_to_shared_folder(extractor.file) 
+      # send_via_email(extractor.file)
+    end
+    
+## Testing
+
+No internet connection is required to run tests. 
+
+We do not use VCR, instead we use the mock page 'test/test.html' 
+which contains links and controls of real pages. 
+ 
+To run tests enter:
+ 
+    ruby spec/extractor_test.rb 
+    
+We use Minitest, thus `ruby` instead of `rspec`.

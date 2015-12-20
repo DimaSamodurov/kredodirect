@@ -7,5 +7,4 @@ require 'minitest/autorun'
 require 'minitest/spec'
 require "minitest/reporters"
 Minitest::Reporters.use!
-require 'kredodirect/extractor'
-require 'config/firefox_config'
+require 'kredodirect/account_history_extractor'
