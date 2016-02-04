@@ -35,6 +35,10 @@ or
     
     bin/kredodirect -t
     
+run in headless mode (on Linux)
+    
+    xvfb-run -a bin/kredodirect -t
+    
 ## Use within your application
     
     require 'kredodirect'
